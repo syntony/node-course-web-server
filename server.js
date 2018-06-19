@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+//  dynamic port for heroku
+const port = process.env.PORT || 3000;
 //  connect express
 const app = express();
 //  register partials for handlebars view engine
@@ -53,8 +55,8 @@ app.get('/about', (req, res) => {
 });
 
 //  listen port
-app.listen(3000, () => {
-  console.log('Server is up on port 3000');
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
 });
 //  offtop
 //  for comfort development:
